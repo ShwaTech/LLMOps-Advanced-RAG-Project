@@ -1,6 +1,6 @@
-from .cutom_logger import CustomLogger as _CustomLogger  # backward compat
+from .custom_logger import CustomLogger as _CustomLogger  # backward compat
 try:
-    from .cutom_logger import CustomLogger
+    from .custom_logger import CustomLogger
 except Exception:
     CustomLogger = _CustomLogger
 
