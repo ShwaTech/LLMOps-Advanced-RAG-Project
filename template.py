@@ -5,7 +5,7 @@ import logging
 logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: %(message)s:')
 
 
-project_name = "multi-doc-chat"
+project_name = "multi_doc_chat"
 
 list_of_files = [
     ".github/workflows/task_defination.json",
