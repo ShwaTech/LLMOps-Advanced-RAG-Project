@@ -89,3 +89,38 @@ uv add -r requirements.txt
 # Activate The Virtual Environment
 source .venv/bin/activate
 ```
+
+## MultiDocChat (FastAPI)
+
+### How it works
+
+- Upload: Files are uploaded to `data/<session_id>/`, split, embedded, and saved as a FAISS index in `faiss_index/<session_id>/`.
+- Chat: Each request loads the FAISS index for the given `session_id` and answers using RAG.
+- Sessions: A simple in-memory history per session on the server (resets on restart). The browser stores `session_id` in `localStorage`.
+
+### Run locally
+
+1- Install deps
+
+```bash
+pip install -r requirements.txt
+```
+
+2- Start the server
+
+```bash
+uvicorn main:app --reload
+```
+
+3- Open the UI
+
+```bash
+open http://localhost:8000/
+```
+
+### Endpoints
+
+- `GET /` – Serves the UI.
+- `GET /health` – Health check.
+- `POST /upload` – Form-data file upload. Returns `{ session_id, indexed }`.
+- `POST /chat` – JSON body `{ session_id, message }`. Returns `{ answer }`.

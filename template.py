@@ -42,7 +42,6 @@ list_of_files = [
     ".env",
     ".env.example",
     "main.py",
-    "app.py",
     "test.py",
     "run_evaluations.py",
     ".dockerignore",
