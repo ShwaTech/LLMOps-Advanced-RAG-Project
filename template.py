@@ -32,7 +32,7 @@ list_of_files = [
     "notebook/02-RAG.ipynb",
     "notebook/03-Evaluations.ipynb",
     "data/Agentic_AI.txt",
-    "test/configure_test.py",
+    "test/conftest.py",
     "test/integration/test_chat_route.py",
     "test/integration/test_upload_route.py",
     "test/unit/test_data_ingestion.py",

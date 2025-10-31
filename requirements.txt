@@ -17,6 +17,7 @@ faiss-cpu
 fastapi
 uvicorn
 Jinja2
+pytest
 
 langsmith
 groq
