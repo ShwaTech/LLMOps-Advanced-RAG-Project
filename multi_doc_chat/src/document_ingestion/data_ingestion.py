@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Iterable, List, Optional, Dict, Any
-from langchain_classic.schema import Document
+from langchain.schema import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from multi_doc_chat.utils.model_loader import ModelLoader

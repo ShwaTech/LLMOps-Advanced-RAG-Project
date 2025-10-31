@@ -1,0 +1,38 @@
+🔍 High-Level Highlights
+* For customer-facing applications, 3 of the top 5 (and half of the top 10) most popular models are from OpenAI. ([Amplify Partners][1])
+* 70% of respondents are using Retrieval-Augmented Generation (RAG) in some form. ([Amplify Partners][1])
+* More than 50% of practitioners update their models at least monthly; 17% update weekly. ([Amplify Partners][2])
+* 37% of respondents not yet using audio plan to adopt it soon, showing strong intent for audio modality. ([Amplify Partners][1])
+* In the majority of agent-deployments in production, the agent has write access (often with a human in loop); about 13% can act completely independently. ([Amplify Partners][1])
+
+👥 Who was surveyed / Demographics
+* Surveyed hundreds of engineers working in AI engineering and infrastructure. ([Amplify Partners][2])
+* Among respondents with 10+ years of software engineering experience, 45% have **3 years or fewer** of AI/ML experience. ([Amplify Partners][1])
+* 1 in 10 respondents has less than 1 year of AI experience. ([Amplify Partners][1])
+
+⚙️ Model usage & Customization
+* Over half of respondents use large-language-models (LLMs) for both internal tooling and external customer-facing use cases. ([Amplify Partners][1])
+* 94% of LLM-using teams are applying them to at least 2 distinct use-cases; 82% to at least 3. ([Amplify Partners][1])
+* Fine-tuning is used by 41% of respondents. Parameter-efficient methods (LoRA / QLoRA) and DPO / reinforcement workflows are referenced. ([Amplify Partners][1])
+* Prompt updates are very frequent: 70% update at least monthly; 10% daily. Yet 31% of teams say they have **no structured tool** for prompt management. ([Amplify Partners][2])
+
+🌐 Modalities & Vector Infrastructure
+* Text remains dominant; image, audio, video lag. But audio has highest intent-to-adopt among not-yet-users. ([Amplify Partners][1])
+* 65% of respondents use a **dedicated vector database** for embeddings / retrieval. 35% self-host, 30% use third-party managed. ([Amplify Partners][1])
+
+🤖 Agents & Autonomy
+* Agents (defined as “LLM controls core decision making or workflow”) are still early: 80% say LLMs are working well, but less than 20% say the same about agents. ([Amplify Partners][1])
+* Very few teams say they’ll never use agents (< 10%). Most expect to adopt. ([Amplify Partners][2])
+* In agent production: majority have human-in-loop, but some (~13%) operate completely autonomously. ([Amplify Partners][1])
+
+🧪 Monitoring, Evals & Pain Points
+* Monitoring: ~60% use standard observability tools; ~50% use offline evaluations. Human review remains the most popular evaluation method. ([Amplify Partners][2])
+* Evaluation (evals) is cited as the **single most painful aspect** of AI engineering today. ([StartupHub.ai][3])
+
+📌 Key Takeaways
+* AI engineering is **fast-moving**: frequent model, prompt, and modality updates.
+* Infrastructure maturity is increasing (vector DBs, multimodal intent) but still has gaps (multimodal production, prompt management tools).
+* Agents are on the horizon but not yet mainstream; autonomy is still limited.
+* The hardest problem remains evaluation and monitoring of AI systems in production.
+* OpenAI models hold a dominant position in customer-facing LLM use-cases today.
+

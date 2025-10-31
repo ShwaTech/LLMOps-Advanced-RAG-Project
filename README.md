@@ -1,6 +1,6 @@
 # LLMOps-Advanced-RAG-Project
 
-End-To-End Advanced RAG Project: build an Advanced RAG with LangChain, AstraDB, and utilizing advanced features (Memory, Evals, MMR); integrate with FastAPI APIs and UI (Streamlit/HTML/CSS); test using Pytest; and finally deploy to AWS ECS Fargate via CI/CD using GitHub Actions and Jenkins...
+End-To-End Advanced RAG Project: build an Advanced RAG with LangChain, FAISS DB, and utilizing advanced features (Memory, Evaluations - DeepEval, LLM as Judge, MMR - Maximal Marginal Relevance); integrate with FastAPI APIs and UI (Streamlit/HTML/CSS); test using Pytest; and finally deploy to AWS ECS Fargate via CI/CD using GitHub Actions and Jenkins...
 
 ## Project Structure
 
