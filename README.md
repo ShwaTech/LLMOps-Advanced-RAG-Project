@@ -124,3 +124,54 @@ open http://localhost:8000/
 - `GET /health` – Health check.
 - `POST /upload` – Form-data file upload. Returns `{ session_id, indexed }`.
 - `POST /chat` – JSON body `{ session_id, message }`. Returns `{ answer }`.
+
+## Evaluations 🧪
+
+Run LangSmith evaluations on your RAG system:
+
+```bash
+# Quick start - run with default settings
+python run_evaluations.py
+
+# Run with all evaluators
+python run_evaluations.py --evaluator all
+
+# Custom parameters
+python run_evaluations.py --evaluator correctness --chunk-size 500 --k 10
+```
+
+**Available Evaluators:**
+
+- `correctness` - Custom LLM-as-a-Judge (Gemini 2.5 Pro)
+- `cot_qa` - Chain-of-Thought QA evaluator
+- `all` - Run all evaluators
+
+**Documentation:**
+
+- Jupyter Notebook: [notebook/03-Evaluations.ipynb](notebook/03-Evaluations.ipynb)
+- MMR Implementation: [guide/MMR_IMPLEMENTATION.md](guide/MMR_IMPLEMENTATION.md)
+
+## Notes
+
+- Ensure your API keys/config are set for the `ModelLoader` to load embeddings/LLM.
+- For evaluations, you need `LANGSMITH_API_KEY` and `GOOGLE_API_KEY` in your `.env` file.
+- Supported file types: `.pdf`, `.docx`, `.txt`.
+- For production, add persistence for chat history and auth; consider cleanup of old session directories.
+
+## Deployment
+
+### Deployed to AWS ECS Fargate via CI/CD using GitHub Actions
+
+### **IAM User Attached Policies**
+
+**Custom Policies**
+1- AllowECSLogs        -> [guide/allow_ecs_logs.json](guide/allow_ecs_logs.json)
+2- AllowSecretsAccess  -> [guide/allow_secrets_access.json](guide/allow_secrets_access.json)
+But Here (AllowSecretsAccess) You Must First Create The Secret In AWS Secrets Manager Manually With Custom Key and Value
+
+**AWS Managed Policies**
+3- AmazonEC2ContainerRegistryFullAccess
+4- AmazonECS_FullAccess
+5- AmazonS3FullAccess
+6- CloudWatchLogsFullAccess
+7- SecretsManagerReadWrite

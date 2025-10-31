@@ -1,0 +1,46 @@
+{
+    "family": "shwa-llmops-task",
+    "networkMode": "awsvpc",
+    "executionRoleArn": "arn:aws:iam::047719640457:role/ecsTaskExecutionRole",
+    "requiresCompatibilities": ["FARGATE"],
+    "cpu": "1024",
+    "memory": "8192",
+    "containerDefinitions": [
+      {
+        "name": "shwa-llmops-container",
+        "image": "047719640457.dkr.ecr.us-east-1.amazonaws.com/shwa-llmops-repo",
+        "cpu": 1024,
+        "essential": true,
+        "portMappings": [
+          {
+            "containerPort": 8080,
+            "hostPort": 8080,
+            "protocol": "tcp",
+            "name": "shwa-llmops-container-8080-tcp",
+            "appProtocol": "http"
+          }
+        ],
+        "environment": [
+          {
+            "name": "ENV",
+            "value": "production"
+          }
+        ],
+        "secrets": [
+          {
+            "name": "apikeyliveclass",
+            "valueFrom": "arn:aws:secretsmanager:us-east-1:047719640457:secret:LLMOps-XbfAfV"
+          }
+        ],
+        "logConfiguration": {
+          "logDriver": "awslogs",
+          "options": {
+            "awslogs-group": "/ecs/shwa-llmops-task",
+            "awslogs-region": "us-east-1",
+            "awslogs-stream-prefix": "ecs",
+            "awslogs-create-group": "true"
+          }
+        }
+      }
+    ]
+  }
